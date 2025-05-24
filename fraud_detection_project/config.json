@@ -1,0 +1,61 @@
+{
+    "data": {
+        "training_data": {
+            "path": "C:/Users/Administrator/Desktop/logistic regression/fraud_detection_project/L.fraud_test_data.csv",
+            "target_column": "fraud_cases"
+        },
+        "prediction_data": {
+            "path": "data/predict.csv"
+        }
+    },
+    "data_preprocessing": {
+        "numeric_imputation_strategy": "mean",
+        "categorical_imputation_strategy": "most_frequent",
+        "encoding": {
+            "handle_unknown": "ignore",
+            "sparse": false
+        }
+    },
+    "model": {
+        "class_weight": "balanced",
+        "max_iter": 1000,
+        "random_state": 42,
+        "n_jobs": -1
+    },
+    "training": {
+        "test_size": 0.2,
+        "validation_size": 0.25,
+        "cv_folds": 5,
+        "random_state": 42
+    },
+    "prediction": {
+        "high_risk_threshold": 0.8
+    },
+    "paths": {
+        "data_dir": "data",
+        "models_dir": "models",
+        "results_dir": "results",
+        "default_model_name": "fraud_model.joblib"
+    },
+    "visualization": {
+        "confusion_matrix": {
+            "figsize": [8, 6],
+            "cmap": "Blues"
+        },
+        "roc_curve": {
+            "figsize": [8, 6],
+            "line_color": "darkorange",
+            "line_width": 2
+        },
+        "pr_curve": {
+            "figsize": [8, 6],
+            "line_color": "darkorange",
+            "line_width": 2
+        },
+        "probability_dist": {
+            "figsize": [10, 6],
+            "n_bins": 50,
+            "threshold_color": "red"
+        }
+    }
+} 
